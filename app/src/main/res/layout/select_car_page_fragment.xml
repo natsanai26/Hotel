@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/carBooking"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="0"
@@ -36,7 +36,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/carRent"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_weight="0"

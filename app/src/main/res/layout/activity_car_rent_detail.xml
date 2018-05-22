@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/ic_directions_car_black_24dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="location" />
+
+            <TextView
+                android:id="@+id/brand"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="brand" />
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="model" />
+
+            <TextView
+                android:id="@+id/numberplate"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="numberplate" />
+
+            <TextView
+                android:id="@+id/vehicleYear"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="vehicleYear" />
+
+            <TextView
+                android:id="@+id/seat"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="seat" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="price" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/vehicledetailsButton"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vehicledetails" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/vehicledetails">
+
+        <TextView
+            android:id="@+id/transmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="transmission" />
+
+        <TextView
+            android:id="@+id/cruisecontrol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="cruisecontrol" />
+
+        <TextView
+            android:id="@+id/cddvd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="cddvd" />
+
+        <TextView
+            android:id="@+id/bluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="bluetooth" />
+
+        <TextView
+            android:id="@+id/rearcamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="rearcamera" />
+
+        <TextView
+            android:id="@+id/engine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="engine" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/Number"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName"
+            android:hint="Number" />
+        <EditText
+            android:id="@+id/passportNumber"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName"
+            android:hint="passportNumber" />
+
+        <EditText
+            android:id="@+id/FirstName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName"
+            android:hint="FirstName" />
+
+        <EditText
+            android:id="@+id/LastName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:inputType="textPersonName"
+            android:hint="LastName" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <Button
+                android:id="@+id/okButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="CANCEL" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

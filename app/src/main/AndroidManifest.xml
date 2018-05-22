@@ -20,9 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.RoomBookingActivity"></activity>
-        <activity android:name=".Activity.CarBookingActivity"></activity>
-        <activity android:name=".Activity.CarRentActivity"></activity>
+        <activity android:name=".Activity.RoomBookingActivity" />
+        <activity android:name=".Activity.CarBookingActivity" />
+        <activity android:name=".Activity.CarRentActivity" />
+        <activity android:name=".Activity.CarRentDetailActivity"></activity>
     </application>
 
 </manifest>

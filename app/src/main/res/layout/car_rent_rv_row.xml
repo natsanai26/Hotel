@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    card_view:cardBackgroundColor="#FFFFFF"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    card_view:cardElevation="5dp"
+    android:layout_height="90dp">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="brand"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintVertical_bias="0.14"
+            card_view:layout_constraintHorizontal_bias="0.614" />
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="model"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintVertical_bias="0.14"
+            card_view:layout_constraintHorizontal_bias="0.875" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="price"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintHorizontal_bias="0.854"
+            card_view:layout_constraintVertical_bias="0.859" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="location"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintHorizontal_bias="0.641"
+            card_view:layout_constraintVertical_bias="0.859" />
+
+        <ImageView
+            android:id="@+id/carRentPic"
+            android:layout_width="175dp"
+            android:layout_height="74dp"
+            card_view:srcCompat="@drawable/ic_directions_car_black_24dp"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="7dp"
+            card_view:layout_constraintLeft_toLeftOf="parent"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            card_view:layout_constraintVertical_bias="0.0"
+            android:layout_marginRight="8dp"
+            card_view:layout_constraintRight_toRightOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            tools:layout_editor_absoluteY="10dp" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

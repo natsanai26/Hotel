@@ -12,16 +12,19 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.natsanai.hotel.Interface.HotelAPI;
+import com.example.natsanai.hotel.Interface.TourAPI;
 import com.example.natsanai.hotel.MyAPI;
 import com.example.natsanai.hotel.R;
 import com.example.natsanai.hotel.model.Booking;
 
+import com.example.natsanai.hotel.model.CarBookingResponse;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -34,6 +37,7 @@ import retrofit2.Response;
 
 public class SearchFragment extends Fragment {
     private HotelAPI hotelAPI;
+    private TourAPI tourAPI;
     private RecyclerView bookingRV;
     private EditText email;
     private ImageView searchButton;
@@ -47,13 +51,14 @@ public class SearchFragment extends Fragment {
             public void onClick(View view) {
                 if (!email.getText().toString().equals(""))
                 {
-                    getAllBookings(email.getText().toString());
+                    getAllRoomBookings(email.getText().toString());
+                    getAllCarBookings(email.getText().toString());
                 }
             }
         });
         return view;
     }
-    public void getAllBookings(String email)
+    public void getAllRoomBookings(String email)
     {
         Call<ResponseBody> responseBody = hotelAPI.getBookingsByEmail(email);
         responseBody.enqueue(new Callback<ResponseBody>() {
@@ -78,9 +83,35 @@ public class SearchFragment extends Fragment {
             }
         });
     }
+    public void getAllCarBookings(String email)
+    {
+        Call<ResponseBody> responseBody = tourAPI.getCarBookingsByEmail(email);
+        responseBody.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    String jsonString = response.body().string();
+                    Toast.makeText(getContext(),jsonString,Toast.LENGTH_LONG).show();
+                    Gson gson = new Gson();
+                    CarBookingResponse carBookingResponse = gson.fromJson(jsonString,CarBookingResponse.class);
+                    List<CarBookingResponse.Booking> bookings = carBookingResponse.getResult();
+
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
     public void init(View view)
     {
         hotelAPI = MyAPI.getHotelAPI();
+        tourAPI = MyAPI.getTourAPI();
         bookingRV = view.findViewById(R.id.booking_rv);
         email = view.findViewById(R.id.email);
         searchButton = view.findViewById(R.id.search);

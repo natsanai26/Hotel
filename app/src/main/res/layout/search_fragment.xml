@@ -28,11 +28,35 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/ic_search_black_24dp" />
+
     </LinearLayout>
 
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/roomBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="roomBooking" />
+
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/booking_rv"
+        android:layout_marginTop="10dp"
+        android:id="@+id/room_booking_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/carBooking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="carBooking" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:id="@+id/car_booking_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

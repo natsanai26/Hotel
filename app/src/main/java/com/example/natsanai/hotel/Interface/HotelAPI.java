@@ -18,6 +18,11 @@ public interface HotelAPI {
     @GET("rooms")
     Call<ResponseBody> getAllRooms();
 
+    @GET("rooms/{id}")
+    Call<ResponseBody> getRoomById(
+            @Path("id") int id
+    );
+
     @GET("bookings/email/{email}")
     Call<ResponseBody> getBookingsByEmail(
             @Path("email") String email

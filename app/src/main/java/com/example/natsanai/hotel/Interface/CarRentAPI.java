@@ -20,7 +20,7 @@ public interface CarRentAPI {
     );
 
     @POST("rentals/create")
-    Call<ResponseBody> CreateRental(
+    Call<ResponseBody> createRental(
             @Header("key") String key,
             @Body RequestBody body
     );

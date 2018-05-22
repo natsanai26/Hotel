@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.natsanai.hotel.Interface.HotelAPI;
 import com.example.natsanai.hotel.MyAPI;
@@ -14,7 +15,9 @@ import com.example.natsanai.hotel.model.Room;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -33,12 +36,13 @@ public class RoomBookingAdapter extends RecyclerView.Adapter<RoomBookingAdapter.
     private ArrayList<Room> rooms;
     private HotelAPI hotelAPI;
 
+
     public RoomBookingAdapter(Context context,List<Booking> roomBookings)
     {
         this.context = context;
         this.roomBookings = roomBookings;
         hotelAPI = MyAPI.getHotelAPI();
-        for (Booking rb:roomBookings)
+        /*for (Booking rb:roomBookings)
         {
             Call<ResponseBody> responseBody = hotelAPI.getRoomById(rb.getRoomId());
             responseBody.enqueue(new Callback<ResponseBody>() {
@@ -48,7 +52,7 @@ public class RoomBookingAdapter extends RecyclerView.Adapter<RoomBookingAdapter.
                         String json = response.body().string();
                         Gson gson = new Gson();
                         Room r = gson.fromJson(json,Room.class);
-                        RoomBookingAdapter.this.rooms.add(r);
+                        //RoomBookingAdapter.this.rooms.add(r);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -59,7 +63,7 @@ public class RoomBookingAdapter extends RecyclerView.Adapter<RoomBookingAdapter.
 
                 }
             });
-        }
+        }*/
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -70,7 +74,22 @@ public class RoomBookingAdapter extends RecyclerView.Adapter<RoomBookingAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Booking b = roomBookings.get(position);
 
+        holder.email.setText(b.getEmail());
+
+        Date d1 = new Date(b.getDateCheckIn());
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String d11 = df.format(d1);
+        holder.dateCheckIn.setText(d11);
+
+        Date d2 = new Date(b.getDateCheckIn());
+        SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yyyy");
+        String d21 = df.format(d2);
+        holder.dateCheckOut.setText(d21);
+
+        //String des = rooms.get(position).getPlace();
+        //holder.destination.setText(des);
     }
 
     @Override
@@ -80,8 +99,16 @@ public class RoomBookingAdapter extends RecyclerView.Adapter<RoomBookingAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
+        public TextView destination;
+        public TextView email;
+        public TextView dateCheckIn;
+        public TextView dateCheckOut;
         public ViewHolder(View itemView) {
             super(itemView);
+            destination = itemView.findViewById(R.id.destination);
+            email = itemView.findViewById(R.id.email);
+            dateCheckIn = itemView.findViewById(R.id.dateCheckIn);
+            dateCheckOut = itemView.findViewById(R.id.dateCheckOut);
         }
     }
 
